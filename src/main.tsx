@@ -1,10 +1,15 @@
-import React from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 import routes from "@/routes/index";
-
 import "@/styles/tailwind.css";
 
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { enabled: true, staleTime: Infinity } },
+});
+
 createRoot(document.getElementById("root") as HTMLElement).render(
-  <RouterProvider router={routes} />
+  <QueryClientProvider client={queryClient}>
+    <RouterProvider router={routes} />
+  </QueryClientProvider>
 );

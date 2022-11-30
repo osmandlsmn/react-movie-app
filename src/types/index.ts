@@ -1,11 +1,11 @@
 export interface TrendResponse {
   page: number;
-  results: Result[];
+  results: Movie[];
   total_pages: number;
   total_results: number;
 }
 
-export interface Result {
+export interface Movie {
   adult: boolean;
   backdrop_path: string;
   id: number;

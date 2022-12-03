@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import Input from "@/components/UI/Input/index";
+import SearchBox from "@/components/SearchBox/index";
 
 const Header: React.FC = () => {
   return (
@@ -16,7 +16,7 @@ const Header: React.FC = () => {
           <Link to="/latest">List anime</Link>
         </nav>
       </div>
-      <Input placeholder="Search anime or movie" />
+      <SearchBox />
     </div>
   );
 };

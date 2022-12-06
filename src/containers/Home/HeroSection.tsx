@@ -1,5 +1,5 @@
-import { getPhotoURL } from "@/helpers";
 import { BackdropSizes, LatestResponse, Movie } from "@/types";
+import { getPhotoURL } from "@/helpers";
 import React, { useEffect, useState } from "react";
 import { useQueryClient } from "react-query";
 

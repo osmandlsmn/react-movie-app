@@ -8,21 +8,21 @@ import MovieLoader from "./MovieLoader";
 
 const SearchInput: React.FC = () => {
   const [searchValue, setSearchValue] = useState("");
-  const { data, isLoading } = useQuery(["movieSearch", searchValue], () => searchMovie(searchValue), { enabled: !!searchValue });
+  const { data, isLoading } = useQuery(["searchMovies", searchValue], () => searchMovie(searchValue), { enabled: !!searchValue });
 
   const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
   };
 
   return (
-    <div className="relative text-md h-10 w-[370px] bg-secondary group rounded-lg ">
-      <div className="h-full flex items-center gap-x-3 px-3">
+    <div className="text-md group relative h-10 w-[370px] rounded-lg bg-secondary ">
+      <div className="flex h-full items-center gap-x-3 px-3">
         <SearchIcon />
         <input className="w-full bg-transparent outline-none placeholder:tracking-wider" placeholder="search movies" onChange={handleSearch} />
       </div>
       <div
         tabIndex={1}
-        className="no-scrollbar group-focus-within:block hidden absolute top-12 w-full bg-secondary rounded-lg max-h-[350px] overflow-x-auto z-50"
+        className="no-scrollbar absolute top-12 z-50 hidden max-h-[350px] w-full overflow-x-auto rounded-lg bg-secondary group-focus-within:block"
       >
         {isLoading ? <MovieLoader /> : <ListMovies movies={data?.data.results} />}
       </div>

@@ -1,8 +1,23 @@
-export interface TrendResponse {
-  page: number;
-  results: Movie[];
-  total_pages: number;
-  total_results: number;
+export interface Series {
+  backdrop_path: null | string;
+  first_air_date?: Date;
+  genre_ids: number[];
+  id: number;
+  media_type: MediaType;
+  name?: string;
+  origin_country?: string[];
+  original_language: string;
+  original_name?: string;
+  overview: string;
+  popularity: number;
+  poster_path: null | string;
+  vote_average: number;
+  vote_count: number;
+  adult?: boolean;
+  original_title?: string;
+  release_date?: string;
+  title?: string;
+  video?: boolean;
 }
 
 export interface Movie {
@@ -27,15 +42,31 @@ export enum MediaType {
   Movie = "movie",
 }
 
+export type Multi = Movie & Series;
 export interface SearchResponse {
+  page: number;
+  results: Multi[];
+  total_pages: number;
+  total_results: number;
+}
+
+export interface LatestResponse {
   page: number;
   results: Movie[];
   total_pages: number;
   total_results: number;
 }
 
+export enum BackdropSizes {
+  w300 = "w300",
+  w780 = "w780",
+  w1280 = "w1280",
+  original = "original",
+}
+
 export enum OriginalLanguage {
   De = "de",
   En = "en",
   Pl = "pl",
+  Tr = "tr",
 }

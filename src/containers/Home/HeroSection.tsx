@@ -20,12 +20,12 @@ const HeroSection: React.FC = () => {
       </div>
       <div className="relative mt-4 sm:mt-6">
         <div className="bg-line absolute top-0 h-full w-full bg-gradient-to-r from-gray-800 to-transparent">
-          <div className="xs:pl-10 xs:pb-14 absolute top-0 bottom-0 left-0 right-0 flex max-w-xl flex-col place-content-end rounded-lg pl-4 text-white md:pl-10 md:pb-10">
+          <div className="xs:pl-10 xs:pb-14 absolute top-0 bottom-0 left-0 right-0 flex max-w-xl flex-col place-content-end rounded-lg pl-4 pb-5 text-white md:pl-10 md:pb-10">
             <h3 className="text-1xl font-semibold leading-10 sm:mb-5 sm:text-3xl">{movie?.title}</h3>
-            <p className="hidden md:block">{movie?.overview}</p>
+            <p className="text-[12px] md:text-base">{movie?.overview}</p>
           </div>
         </div>
-        <img className=" opacity- w-full rounded-lg object-cover 2xl:h-[400px]" src={getPhotoURL(BackdropSizes.w1280, movie?.backdrop_path)} alt="" />
+        <img className=" w-full rounded-lg sm:h-[300px] lg:h-[400px] " src={getPhotoURL(BackdropSizes.w1280, movie?.backdrop_path)} alt="" />
       </div>
     </section>
   );

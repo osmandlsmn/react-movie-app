@@ -1,6 +1,6 @@
 import * as React from "react";
 import HeroSection from "@/containers/Home/HeroSection";
-import LatestMovies from "@/containers/Home/ListMovies";
+import ListMovies from "@/containers/Home/ListMovies";
 
 import { useQuery } from "react-query";
 import { getLatestMovies } from "@/api/movie";
@@ -11,7 +11,7 @@ const Home: React.FC = () => {
   return (
     <>
       <HeroSection />
-      <LatestMovies title="Latest Movies" movies={data?.data.results} />
+      <ListMovies title="Latest Movies" movies={data?.data.results} />
     </>
   );
 };

@@ -1,10 +1,9 @@
 import React, { ChangeEvent, useState } from "react";
 import { useQuery } from "react-query";
 import { searchMovie } from "@/api/movie";
-
-import { SearchIcon } from "@/components/Icons/index";
 import ListMovies from "./ListMovies";
 import MovieLoader from "./MovieLoader";
+import { TbSearch } from "react-icons/tb";
 
 const SearchInput: React.FC = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -17,7 +16,7 @@ const SearchInput: React.FC = () => {
   return (
     <div className="text-md group relative h-10 w-[370px] rounded-lg bg-secondary ">
       <div className="flex h-full items-center gap-x-3 px-3">
-        <SearchIcon />
+        <TbSearch />
         <input className="w-full bg-transparent outline-none placeholder:tracking-wider" placeholder="search movies" onChange={handleSearch} />
       </div>
       <div

@@ -3,6 +3,7 @@ import { RouterProvider } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import routes from "@/routes/index";
 import "@/styles/tailwind.css";
+import "swiper/css";
 
 const queryClient = new QueryClient({
   defaultOptions: { queries: { enabled: true, staleTime: Infinity } },
